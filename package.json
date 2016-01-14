@@ -1,0 +1,32 @@
+{
+  "name": "json-rename",
+  "version": "1.0.0",
+  "description": "A Javasript utility to rename a JSON object's key",
+  "main": "src/json-rename.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanisTseng/json-rename.git"
+  },
+  "keywords": [
+    "Javascript",
+    "JSON",
+    "rename"
+  ],
+  "author": "Tseng, Yu-Kai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TanisTseng/json-rename/issues"
+  },
+  "homepage": "https://github.com/TanisTseng/json-rename#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-mocha-test": "^0.12.7",
+    "mocha": "^2.3.4"
+  }
+}
