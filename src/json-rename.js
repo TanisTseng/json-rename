@@ -4,9 +4,7 @@ var JsonRename = function(){
 	var changeBothParentAndChildren = function(jsonObject, key, translationTable){
 		var translatedObject = renameKeys(jsonObject[key], translationTable[key][0]);
 		if(translationTable[key][1] !== undefined){
-			//console.log(jsonObject);
 			jsonObject[translationTable[key][1]] = translatedObject;
-			
 			delete jsonObject[key];
 		}
 		return jsonObject;
