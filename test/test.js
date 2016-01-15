@@ -22,7 +22,19 @@ describe('Test json-rename library', function(){
 		'CPBL2':{
 			'Lamigo Monkeys': 'CT Brothers',
 			'Eda Rhinos': 'CT Brothers',
-		}
+		},
+		'Austria':
+		[{
+			'New South Wales': [{
+				'Brisbane': 'Gold Coast',
+				'Cairns': 'Townsville',
+				}, 'Queensland'],
+			'Western Australia': [{
+				'AliceSpring': {
+					'uluru': 'Ayers Rock'
+				}
+			}, 'North Territory']
+		}, 'Australia'],
 	};
 
 	it('should returns Oakland instead of Auckland', function(){
@@ -85,6 +97,39 @@ describe('Test json-rename library', function(){
 			'CPBL': {
 				'CT Brothers': 'Ngayaw Ake',
 				'Uni Lions': 'OEO',
+			}
+		};
+
+		var translatedObject = jsonRename.renameKeys(rawObject, translationTable);
+		expect(expectedObject).to.eql(translatedObject);
+	});
+
+	it('test 3-level object', function(){
+		var rawObject = {
+			'Austria': {
+				'New South Wales':{
+					'Brisbane': 'Surfing',
+					'Cairns': 'Reef',
+				},
+				'Western Australia':{
+					'AliceSpring': {
+						'uluru': 'English Name',
+					}
+				},
+			}
+		};
+
+		var expectedObject = {
+			'Australia':{
+				'Queensland': {
+					'Gold Coast': 'Surfing',
+					'Townsville': 'Reef',
+				},
+				'North Territory':{
+					'AliceSpring': {
+						'Ayers Rock': 'English Name',
+					}
+				}
 			}
 		};
 
